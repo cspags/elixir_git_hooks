@@ -74,7 +74,7 @@ defmodule GitHooks.Git.GitPath do
 
   # Recursively traverse upwards to find the .git directory
   defp find_git_root(path) do
-    if File.dir?(Path.join(path, ".git")) do
+    if File.exists?(Path.join(path, ".git")) do
       path
     else
       parent = Path.dirname(path)
